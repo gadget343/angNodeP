@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
-    <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.87/traceur-runtime.js"></script>
-    <script src="https://jspm.io/system@0.16.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-alpha.28/angular2.dev.js"></script>
+    <link rel="stylesheet" href="/assets/css/products.css">
+    <script src="http://cdn.rawgit.com/google/traceur-compiler/90da568c7aa8e53ea362db1fc211fbb4f65b5e94/bin/traceur-runtime.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.4/system.src.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.37/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.37/router.dev.js"></script>
     <title>Hello</title>
+    <script>
+       System.config({
+         defaultJSExtensions: false
+       });
+    </script>
 </head>
 <body>
-    <my-app></my-app>
-    <script>System.import('app');</script>
+    <app></app>
+    <script>System.import('app.js');</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 </body>

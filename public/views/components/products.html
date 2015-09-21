@@ -1,0 +1,17 @@
+<div>
+	<product-filter (filter)="onFilter($event)"></product-filter>
+<table class="table" class="width:350px">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+	<tbody *ng-for="#product of products" >
+		<tr>
+			<th>{{ product.name}}</th>
+			<th>{{ product.type}}</th>
+		</tr>
+	</tbody>
+</table>
+</div>
