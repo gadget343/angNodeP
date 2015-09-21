@@ -1,6 +1,6 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
 
-import { Component, View, EventEmitter, NgFor, bootstrap} from 'angular2/angular2';
+import { Component, View, EventEmitter, NgFor, NgIf bootstrap} from 'angular2/angular2';
 
 class Product {
   name: string;
@@ -27,10 +27,11 @@ class ProductFilter {
   constructor() {
     
     this.filter = new EventEmitter();
-  }
+  } 
   
   onKeyUp = function(event) {
-    this.filter.next(event);
+    console.log('key Up')
+    this.filter.next({value: "Hello World!"});
   }
   
 }
@@ -43,18 +44,19 @@ class ProductFilter {
 })
 
 @View({
-  directives: [ProductFilter, NgFor],
+  directives: [ProductFilter, NgFor, NgIf],
   templateUrl: 'views/components/products.html'
 })
 
 class ProductList {
   products: Array<Product>;
+  searchWordCount: number;
   constructor() {
     this.products = [new Product('prd1', 1),new Product('prd2', 1),new Product('prd3', 2)];
   }
   onFilter = function(event) {
-    console.log(event)
-    
+    console.log('ProductList filter event')
+    this.searchWordCount = event.value.length;
   }
 }
 // </ProductList component>

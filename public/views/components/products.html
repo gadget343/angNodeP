@@ -1,5 +1,6 @@
 <div>
-	<product-filter (filter)="onFilter($event)"></product-filter>
+<span *ng-if="searchWordCount > 0">Count - {{ searchWordCount }}</span>
+<product-filter (filter)="onFilter($event)"></product-filter>
 <table class="table" class="width:350px">
     <thead>
         <tr>

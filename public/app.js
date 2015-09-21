@@ -21,7 +21,8 @@ var Product = (function () {
 var ProductFilter = (function () {
     function ProductFilter() {
         this.onKeyUp = function (event) {
-            this.filter.next(event);
+            console.log('key Up');
+            this.filter.next({ value: "Hello World!" });
         };
         this.filter = new angular2_1.EventEmitter();
     }
@@ -41,7 +42,8 @@ var ProductFilter = (function () {
 var ProductList = (function () {
     function ProductList() {
         this.onFilter = function (event) {
-            console.log(event);
+            console.log('ProductList filter event');
+            this.searchWordCount = event.value.length;
         };
         this.products = [new Product('prd1', 1), new Product('prd2', 1), new Product('prd3', 2)];
     }
@@ -50,7 +52,7 @@ var ProductList = (function () {
             selector: 'product-list'
         }),
         angular2_1.View({
-            directives: [ProductFilter, angular2_1.NgFor],
+            directives: [ProductFilter, angular2_1.NgFor, angular2_1.NgIf],
             templateUrl: 'views/components/products.html'
         }), 
         __metadata('design:paramtypes', [])
