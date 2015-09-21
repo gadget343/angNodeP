@@ -1,4 +1,4 @@
-/// <reference path="typings/angular2/angular2.d.ts" />
+/// <reference path="node_modules/typings/angular2/angular2.d.ts" />
 
 import { Component, View, EventEmitter, NgFor, bootstrap} from 'angular2/angular2';
 
