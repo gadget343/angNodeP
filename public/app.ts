@@ -1,6 +1,6 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
 
-import { Component, View, EventEmitter, NgFor, NgIf bootstrap} from 'angular2/angular2';
+import { Component, View, EventEmitter, NgFor, NgIf bootstrap, formDirectives} from 'angular2/angular2';
 
 class Product {
   name: string;
@@ -17,6 +17,7 @@ class Product {
 })
 
 @View({
+  directives: [formDirectives],
   templateUrl: 'views/plugins/productFilter.html'
 })
 
